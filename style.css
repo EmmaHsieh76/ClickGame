@@ -1,0 +1,114 @@
+body {
+  background: orange;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+/* 遊戲框 */
+#game {
+  width: 60vw;
+  height: 90vh;
+  margin: auto;
+  background: url(./images/background.png) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  /* 不能反白 */
+  user-select: none;
+  /* 不能拖曳 */
+  -webkit-user-drag: none;
+}
+
+/* 遊戲範圍 */
+#zone {
+  width: 35vw;
+  height: 55vh;
+  /* background: rgba(255, 0, 0, 0.5); */
+  position: fixed;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -26%);
+  border-radius: 50%;
+  z-index: 1;
+  /* overflow: hidden; */
+}
+
+#game #zone img {
+  width: 10%;
+  height: 20%;
+}
+
+/* 按鈕 */
+#btn-start {
+  width: 10vw;
+  height: 10vh;
+  background: #ddd;
+  border: 3px solid #aaa;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 10vh;
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+
+/* 樹的圖片 */
+#game img {
+  width: 30vw;
+  height: 70vh;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+/* 黑色記錄框 */
+#record {
+  width: 40vw;
+  height: 20vh;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -97%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* 鈔票框 */
+#record > div {
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* 百鈔 */
+#one {
+  background: url(./images/100s.jpg) no-repeat center 1rem;
+  background-size: 80%;
+}
+/* 五百 */
+#five {
+  background: url(./images/500s.jpg) no-repeat center 1rem;
+  background-size: 80%;
+}
+
+/* 一千 */
+#ten {
+  background: url(./images/1000s.jpg) no-repeat center 1rem;
+  background-size: 80%;
+}
+
+/* 秒數 */
+#text-time {
+  font-size: 2rem;
+  position: absolute;
+  top: 8.5%;
+  right: 8.5%;
+  transform: translate(-8.5%, -8.5%);
+}

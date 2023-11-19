@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DotGothic16&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <title>money tree</title>
+</head>
+
+<body>
+  <div id="game">
+    <div id="zone"></div>
+    <img src="./images/tree2.png" id="img">
+    <div id="btn-start">PLAY</div>
+
+    <div id="record">
+      <div id="one">
+        $<span id="one-score">0</span>
+      </div>
+      <div id="five">
+        $ <span id="five-score">0</span>
+      </div>
+      <div id="ten">
+        $<span id="ten-score">0</span>
+      </div>
+    </div>
+    <span id="text-time">00</span>
+
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <script>
+    let oneScore = 0
+    let time = 0
+
+    // 紀錄表先藏起來
+    $('#record').hide()
+
+    // 點擊開始
+    $('#btn-start').click(() => {
+
+      //  開始按鈕淡出
+      $('#btn-start').fadeToggle()
+      // 淡入圖片沒字版
+      $('#img').fadeIn(2000, () => {
+        $('#img').attr('src', `./images/tree3.png`)
+      })
+      // 淡入記錄框
+      $('#record').fadeIn()
+
+      //重設百鈔分數
+      oneScore = 0
+      $('#one-score').text(oneScore)
+
+      // 重設秒數
+      time = 10
+      $('#text-time').text(time)
+
+      // 因為 setInterval 裡的 this 會指向 window，而不是點到的按鈕，所以先把 this 存起來
+      const_this = this
+
+      timer = setInterval(function () {
+        time--
+        // 開始倒數
+        $('#text-time').text(time)
+        // 倒數秒數小於10，十位數補零
+        const Time = time.toString().padStart(2, '0');
+        $('#text-time').text(Time);
+
+        // 隨機1~10
+        // ceil :無條件進位
+        const random = Math.ceil(Math.random() * 10)
+
+        // 產生國父的機率
+        if (random > 1 && $('.father').length < 10) {
+          // round:四捨五入
+          const top = Math.round(Math.random() * 100) + '%'
+          const left = Math.round(Math.random() * 100) + '%'
+          const father = $(`<img src='./images/father.png' class=father style='top:${top};left:${left};transform:translate(-${left},-${top});'>`)
+          $('#zone').append(father)
+        }
+
+
+        if (time === 0) {
+          //  停止倒數
+          clearInterval(timer)
+          // 清空圖片
+          $('#zone').empty()
+          // 記錄區消失
+          $('#record').fadeToggle()
+          // 開始按鈕出現
+          $('#btn-start').fadeIn()
+
+        }
+      }, 1000)
+
+
+      // 點擊圖片
+      $('#zone').on('click','.father',function(){
+        $(this).attr
+      })
+
+
+    })
+
+  </script>
+</body>
+
+</html>

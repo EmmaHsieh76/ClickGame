@@ -32,9 +32,33 @@ body {
   /* overflow: hidden; */
 }
 
-#game #zone img {
+#zone .father {
   width: 10%;
   height: 20%;
+  cursor: pointer;
+}
+#zone .bird {
+  width: 15%;
+  height: 20%;
+  cursor: pointer;
+}
+#zone .boy {
+  width: 10%;
+  height: 20%;
+  cursor: pointer;
+}
+
+#zone .score1 {
+  height: 7%;
+  width: 6%;
+}
+#zone .score2 {
+  height: 14%;
+  width: 10%;
+}
+#zone .score3 {
+  width: 6vw;
+  height: 8vh;
 }
 
 /* 按鈕 */
@@ -43,7 +67,7 @@ body {
   height: 10vh;
   background: #ddd;
   border: 3px solid #aaa;
-  font-size: 2rem;
+  font-size: calc(2rem + 1.5vw);
   text-align: center;
   line-height: 10vh;
   cursor: pointer;
@@ -54,14 +78,41 @@ body {
   transform: translate(-50%, -90%);
 }
 
-/* 樹的圖片 */
 #game img {
   width: 30vw;
   height: 70vh;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -60%);
+  position: fixed;
+  top: 10%;
+  left: 35%;
+}
+/* 樹的圖片 */
+#game #img {
+  width: 30vw;
+  height: 70vh;
+  position: fixed;
+  top: 10%;
+  left: 35%;
+}
+
+/* 樹的搖晃效果 */
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* 樹的搖晃效果 */
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
 }
 
 /* 黑色記錄框 */
@@ -77,7 +128,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: calc(1rem + 2vw);
 }
+
 /* 鈔票框 */
 #record > div {
   width: 33.3%;
@@ -106,9 +159,9 @@ body {
 
 /* 秒數 */
 #text-time {
-  font-size: 2rem;
-  position: absolute;
-  top: 8.5%;
-  right: 8.5%;
-  transform: translate(-8.5%, -8.5%);
+  font-size: calc(2rem + 2vw);
+  position: fixed;
+  top: 9%;
+  left: 76%;
+  transform: translate(-76%, -9%);
 }

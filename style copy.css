@@ -32,26 +32,21 @@ body {
   /* overflow: hidden; */
 }
 
-#zone .father {
-  width: 10%;
+/* 點擊圖片尺寸 */
+#zone img {
   height: 20%;
   cursor: pointer;
+  position: fixed;
+}
+#zone .father,
+#zone .boy {
+  width: 10%;
 }
 #zone .bird {
   width: 15%;
-  height: 20%;
-  cursor: pointer;
-}
-#zone .boy {
-  width: 10%;
-  height: 20%;
-  cursor: pointer;
 }
 
-#zone .score1 {
-  height: 7%;
-  width: 6%;
-}
+#zone .score1,
 #zone .score2 {
   height: 14%;
   width: 10%;
@@ -78,13 +73,6 @@ body {
   transform: translate(-50%, -90%);
 }
 
-#game img {
-  width: 30vw;
-  height: 70vh;
-  position: fixed;
-  top: 10%;
-  left: 35%;
-}
 /* 樹的圖片 */
 #game #img {
   width: 30vw;
@@ -127,34 +115,56 @@ body {
   border-radius: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
   font-size: calc(0.1rem + 2vw);
 }
 
 /* 鈔票框 */
 #record > div {
-  width: 33.3%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 /* 百鈔 */
-#one {
-  background: url(./images/100s.jpg) no-repeat center 1rem;
-  background-size:80%;
-}
 /* 五百 */
-#five {
-  background: url(./images/500s.jpg) no-repeat center 1rem;
-  background-size: 80%;
+/* 一千 */
+#one,
+#five,
+#ten{
+  width: 33.3%;
+  height: 50%;
+  /* background: rgba(0,255,0,0.3); */
 }
 
-/* 一千 */
-#ten {
-  background: url(./images/1000s.jpg) no-repeat center 1rem;
-  background-size: 80%;
+#current {
+  width: 65% !important;
+  height: 50%;
+  font-size: calc(0.7rem + 2vw);
+
+  background: rgba(255,0,0,0.3);
+  border-radius:0 0 0 20px  ;
+}
+
+#his {
+  width: 35%;
+  height: 50%;
+  font-size: calc(0.1rem + 1.5vw);
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start !important; */
+  background: rgba(255, 255, 0, 0.3);
+  border-radius:0 0 20px 0 ;
+}
+
+#his-1{
+  padding-left: 0.3rem;
+}
+#one img,
+#five img,
+#ten img {
+  height: 80%;
 }
 
 /* 秒數 */

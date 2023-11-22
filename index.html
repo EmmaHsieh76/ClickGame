@@ -107,7 +107,7 @@
       $('#current-score').text(currentScore)
 
       // 重設秒數
-      time = 20
+      time = 5
       $('#text-time').text(time)
 
       // 因為 setInterval 裡的 this 會指向 window，而不是點到的按鈕，所以先把 this 存起來
@@ -180,12 +180,10 @@
                 required: true
               },
               inputPlaceholder: '請輸入你的名字',
-              // 驗證錯誤時顯示的文字
-              validationMessage: '請輸入你的名字',
               // 不允許點擊外面關閉對話框
-              allowOutsideClick: false,
+              allowOutsideClick: true,
               // 不允許按 ESC 關閉對話框
-              allowEscapeKey: false
+              allowEscapeKey: true
               // .then是對話框關閉的時候會執行的動作，.then的result會說明關掉視窗的方法
             }).then(function (result) {
               hs.score = currentScore
@@ -199,6 +197,8 @@
             })
           } else {
             Swal.fire({
+              height: "100px", // 调整高度
+              width: "250px", // 調整寬度
               icon: 'info',
               title: '時間到',
               text: `你得到$ ${currentScore} `

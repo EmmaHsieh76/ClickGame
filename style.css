@@ -16,7 +16,21 @@ body {
   user-select: none;
   /* 不能拖曳 */
   -webkit-user-drag: none;
+  display: flex;
+  flex-direction: row-reverse;
+  
 }
+#sun{
+  width: 25%;
+  height: 30%;
+  background:url(./images/sun.png) no-repeat center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+}
+
+
 
 /* 遊戲範圍 */
 #zone {
@@ -153,7 +167,6 @@ body {
   font-size: calc(0.1rem + 1.5vw);
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start !important; */
   background: rgba(255, 255, 0, 0.3);
   border-radius:0 0 20px 0 ;
 }
@@ -170,10 +183,6 @@ body {
 /* 秒數 */
 #text-time {
   font-size: calc(0.1rem + 4vw);
-  position: fixed;
-  top: 8%;
-  left: 74%;
-  transform: translate(-74%, -8%);
 }
 
 /*1920px 以上改變字體大小跟位置 */

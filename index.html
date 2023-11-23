@@ -14,6 +14,8 @@
 
 <body>
   <div id="game">
+    <div id="sun"><span id="text-time">00</span>
+    </div>
     <img src="./images/tree2.png" id="img" class="tree">
     <div id="btn-start">PLAY</div>
 
@@ -36,11 +38,10 @@
 
       <div id="his">
         <div>Best Record</div>
-        <div id="his-1"><span id="name">anonymous</span>/<span id="sor">0</span></div>
+        <div id="his-1"><span id="name">anonymous</span>/$<span id="sor">0</span></div>
 
       </div>
     </div>
-    <span id="text-time">00</span>
 
     <div id="zone"></div>
   </div>
@@ -107,7 +108,7 @@
       $('#current-score').text(currentScore)
 
       // 重設秒數
-      time = 5
+      time = 15
       $('#text-time').text(time)
 
       // 因為 setInterval 裡的 this 會指向 window，而不是點到的按鈕，所以先把 this 存起來
@@ -126,7 +127,7 @@
         const random = Math.ceil(Math.random() * 10)
 
         // 產生國父的機率
-        if (random > 1 && $('.father').length < 15) {
+        if (random > 3 && $('.father').length < 10) {
           // round:四捨五入
           const top = Math.round(Math.random() * 100) + '%'
           const left = Math.round(Math.random() * 100) + '%'
@@ -136,7 +137,7 @@
         }
 
         // 產生boy的機率
-        if (random > 5 && $('.boy').length < 5) {
+        if (random > 5 && $('.boy').length < 7) {
           const top = Math.round(Math.random() * 100) + '%'
           const left = Math.round(Math.random() * 100) + '%'
 
@@ -145,7 +146,7 @@
         }
 
         // 產生鳥的機率
-        if (random > 3 && $('.bird').length < 3) {
+        if (random > 6 && $('.bird').length < 3) {
           const top = Math.round(Math.random() * 100) + '%'
           const left = Math.round(Math.random() * 100) + '%'
           const bird = $(`<img src='./images/bird.png' class=bird style='top:${top};left:${left};transform:translate(-${left},-${top});'>`)

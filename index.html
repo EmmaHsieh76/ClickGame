@@ -16,7 +16,7 @@
   <div id="game">
     <div id="sun"><span id="text-time">00</span>
     </div>
-    <img src="./images/TREE2.png" id="img" class="tree">
+    <img src="./images/tree.png" id="img" class="tree">
     <div id="btn-start">PLAY</div>
 
     <div id="record">
@@ -89,7 +89,7 @@
       $('#btn-start').fadeToggle()
       // 淡入圖片沒字版
       $('#img').fadeIn(2000, () => {
-        $('#img').attr('src', `./images/tree3.png`)
+        $('#img').attr('src', `./images/tree2.png`)
       })
       // 淡入記錄框
       $('#record').fadeIn()
@@ -164,7 +164,7 @@
           $('#record').fadeToggle()
           // 樹變有字版
           $('#img').fadeIn(2000, () => {
-            $('#img').attr('src', `./images/tree2.png`)
+            $('#img').attr('src', `./images/tree.png`)
           })
           // 開始按鈕出現
           $('#btn-start').fadeIn()

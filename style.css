@@ -18,19 +18,16 @@ body {
   -webkit-user-drag: none;
   display: flex;
   flex-direction: row-reverse;
-  
 }
-#sun{
+#sun {
   width: 25%;
   height: 30%;
-  background:url(./images/sun.png) no-repeat center center;
+  background: url(./images/sun.png) no-repeat center center;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: contain;
 }
-
-
 
 /* 遊戲範圍 */
 #zone {
@@ -146,7 +143,7 @@ body {
 /* 一千 */
 #one,
 #five,
-#ten{
+#ten {
   width: 33.3%;
   height: 50%;
   /* background: rgba(0,255,0,0.3); */
@@ -157,8 +154,8 @@ body {
   height: 50%;
   font-size: calc(0.7rem + 2vw);
 
-  background: rgba(255,0,0,0.3);
-  border-radius:0 0 0 20px  ;
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 0 0 0 20px;
 }
 
 #his {
@@ -168,10 +165,10 @@ body {
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 0, 0.3);
-  border-radius:0 0 20px 0 ;
+  border-radius: 0 0 20px 0;
 }
 
-#his-1{
+#his-1 {
   padding-left: 0.3rem;
 }
 #one img,
@@ -197,9 +194,5 @@ body {
 
   #text-time {
     font-size: calc(2rem + 2vw);
-    position: fixed;
-    top: 9%;
-    left: 76%;
-    transform: translate(-76%, -9%);
   }
 }
